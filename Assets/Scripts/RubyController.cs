@@ -1,18 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RubyController : MonoBehaviour
 {
     public float speed = 3.0f;
+    public bool gameOver;
+    public bool gameWin;
     
     public int maxHealth = 5;
 
+    public int score;
+    public int scoreAmount;
+    public int cogs = 4;
 
     public GameObject projectilePrefab;
+    public GameObject pickupEffect;
+
+    public GameObject hitEffect;
 
     public AudioClip throwSound;
     public AudioClip hitSound;
+
+    public Text scoreText;
+    public Text winText;
+    public Text cogsText;
+
+    public static int staticLevel = 1;
     
     public int health { get { return currentHealth; }}
     int currentHealth;
@@ -56,6 +72,8 @@ public class RubyController : MonoBehaviour
 
         Vector2 move = new Vector2(horizontal, vertical);
 
+        cogsText.text = "Cogs: " + cogs;
+
         if(!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
         {
             lookDirection.Set(move.x, move.y);
@@ -75,7 +93,11 @@ public class RubyController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.C))
         {
-            Launch();
+            if  (cogs >= 1)
+            {
+                Launch();
+                cogs = cogs - 1;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.X))
@@ -89,6 +111,12 @@ public class RubyController : MonoBehaviour
                 {
                     character.DisplayDialog();
                 }
+
+                if (scoreAmount >= 4)
+                {
+                    SceneManager.LoadScene("SceneTwo");
+                    staticLevel = 2;
+                }
             }
         }
 
@@ -96,13 +124,35 @@ public class RubyController : MonoBehaviour
         {
             Application.Quit();
         }
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            if (gameWin == true)
+            {
+                SceneManager.LoadScene("MainGame");
+            }
+
+            else if (gameWin == false && gameOver == true)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
+
+
+        if (currentHealth <= 0)
+        {
+            gameOver = true;
+            speed = 0;
+            winText.text = "You Lost! Press R to restart";
+        }
+
     }
 
     void FixedUpdate()
     {
         Vector2 position = rigidbody2d.position;
-        position.x = position.x + 3.0f * horizontal * Time.deltaTime;
-        position.y = position.y + 3.0f * vertical * Time.deltaTime;
+        position.x = position.x + speed * horizontal * Time.deltaTime;
+        position.y = position.y + speed * vertical * Time.deltaTime;
         
         rigidbody2d.MovePosition(position);
     }
@@ -117,12 +167,45 @@ public class RubyController : MonoBehaviour
 
                 isInvincible = true;
                 invincibleTimer = timeInvincible;
-
+                
+                GameObject healthDecrease = Instantiate(hitEffect, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
+                animator.SetTrigger("Hit");
                 PlaySound(hitSound);
+        }
+
+        
+        if (amount > 0)
+        {
+            Instantiate(pickupEffect, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
         }
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
+    }
+
+    public void ChangeScore(int score)
+    {
+        scoreAmount = scoreAmount + score;
+        scoreText.text = "Fixed Robots: " + scoreAmount.ToString();
+
+        if (staticLevel == 1)
+        {
+            if (scoreAmount == 4)
+            {
+             winText.text = "Talk to Jambi to visit stage two!";
+            }
+        }
+
+        if (staticLevel == 2)
+        {
+           if (scoreAmount == 4)
+           {
+            gameWin = true;
+            winText.text = "You Win! Game created by Derek Justus! Press R to play again!";
+            speed = 0.0f;
+           }
+
+        }
     }
 
     void Launch()
@@ -135,5 +218,14 @@ public class RubyController : MonoBehaviour
         animator.SetTrigger("Launch");
 
         PlaySound(throwSound);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Ammo")
+        {
+            cogs = cogs + 3;
+            Destroy(other.gameObject);
+        }
     }
 }

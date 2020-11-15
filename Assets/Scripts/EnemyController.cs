@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
+
+
+
 {
     public float speed;
     public bool vertical;
@@ -17,12 +20,36 @@ public class EnemyController : MonoBehaviour
 
     Animator animator;
 
+    private RubyController rubyController;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        GameObject rubyControllerObject = GameObject.FindWithTag("RubyController"); //this line of code finds the RubyController script by looking for a "RubyController" tag on Ruby
+
+        if (rubyControllerObject != null)
+
+        {
+
+            rubyController = rubyControllerObject.GetComponent<RubyController>(); //and this line of code finds the rubyController and then stores it in a variable
+
+            print ("Found the RubyConroller Script!");
+
+        }
+
+        if (rubyController == null)
+
+        {
+
+            print ("Cannot find GameController Script!");
+
+        }
+
         rigidbody2D = GetComponent<Rigidbody2D>();
         timer = changeTime;
         animator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -81,6 +108,8 @@ public class EnemyController : MonoBehaviour
     {
         broken = false;
         rigidbody2D.simulated = false;
+        animator.SetTrigger("Fixed");
+        rubyController.ChangeScore(1);
         //optional if you added the fixed
         smokeEffect.Stop();
     }

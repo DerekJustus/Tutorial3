@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - DamageZone
     - EnemyController
+    - HardEnemyController
     - HealthCollectible
     - NonPlayerCharacter
     - Projectile
@@ -17,6 +18,7 @@ ScriptsOnlyBuild:
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
@@ -49,6 +51,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Mask
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/MainGame.unity:
     - Class: 1
@@ -88,53 +91,162 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 602}
+      Script: {instanceID: 624}
     - Class: 114
-      Script: {instanceID: 11736}
+      Script: {instanceID: 11734}
     - Class: 114
-      Script: {instanceID: 11886}
+      Script: {instanceID: 11760}
     - Class: 114
-      Script: {instanceID: 12134}
+      Script: {instanceID: 11910}
     - Class: 114
-      Script: {instanceID: 12690}
+      Script: {instanceID: 12034}
     - Class: 114
-      Script: {instanceID: 12884}
+      Script: {instanceID: 12096}
     - Class: 114
-      Script: {instanceID: 12948}
+      Script: {instanceID: 12160}
     - Class: 114
-      Script: {instanceID: 12974}
+      Script: {instanceID: 12716}
     - Class: 114
-      Script: {instanceID: 13544}
+      Script: {instanceID: 12750}
     - Class: 114
-      Script: {instanceID: 13722}
+      Script: {instanceID: 12912}
     - Class: 114
-      Script: {instanceID: 13994}
+      Script: {instanceID: 12976}
     - Class: 114
-      Script: {instanceID: 14152}
+      Script: {instanceID: 13002}
     - Class: 114
-      Script: {instanceID: 14174}
+      Script: {instanceID: 13572}
     - Class: 114
-      Script: {instanceID: 14176}
+      Script: {instanceID: 13750}
     - Class: 114
-      Script: {instanceID: 14208}
+      Script: {instanceID: 14022}
     - Class: 114
-      Script: {instanceID: 14252}
+      Script: {instanceID: 14180}
     - Class: 114
-      Script: {instanceID: 14542}
+      Script: {instanceID: 14202}
     - Class: 114
-      Script: {instanceID: 14654}
+      Script: {instanceID: 14204}
     - Class: 114
-      Script: {instanceID: 14966}
+      Script: {instanceID: 14236}
     - Class: 114
-      Script: {instanceID: 15214}
+      Script: {instanceID: 14280}
     - Class: 114
-      Script: {instanceID: 15268}
+      Script: {instanceID: 14570}
     - Class: 114
-      Script: {instanceID: 15326}
+      Script: {instanceID: 14992}
     - Class: 114
-      Script: {instanceID: 21560}
+      Script: {instanceID: 15240}
     - Class: 114
-      Script: {instanceID: 22286}
+      Script: {instanceID: 15294}
+    - Class: 114
+      Script: {instanceID: 15352}
+    - Class: 114
+      Script: {instanceID: 62390}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 19719996
+      Script: {instanceID: 0}
+    - Class: 156049354
+      Script: {instanceID: 0}
+    - Class: 483693784
+      Script: {instanceID: 0}
+    - Class: 1839735485
+      Script: {instanceID: 0}
+    Assets/Scenes/SceneTwo.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 60
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 66
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 624}
+    - Class: 114
+      Script: {instanceID: 11734}
+    - Class: 114
+      Script: {instanceID: 11760}
+    - Class: 114
+      Script: {instanceID: 11910}
+    - Class: 114
+      Script: {instanceID: 12034}
+    - Class: 114
+      Script: {instanceID: 12096}
+    - Class: 114
+      Script: {instanceID: 12160}
+    - Class: 114
+      Script: {instanceID: 12716}
+    - Class: 114
+      Script: {instanceID: 12912}
+    - Class: 114
+      Script: {instanceID: 13002}
+    - Class: 114
+      Script: {instanceID: 13572}
+    - Class: 114
+      Script: {instanceID: 13750}
+    - Class: 114
+      Script: {instanceID: 14022}
+    - Class: 114
+      Script: {instanceID: 14204}
+    - Class: 114
+      Script: {instanceID: 14236}
+    - Class: 114
+      Script: {instanceID: 14280}
+    - Class: 114
+      Script: {instanceID: 15240}
+    - Class: 114
+      Script: {instanceID: 15294}
+    - Class: 114
+      Script: {instanceID: 15352}
+    - Class: 114
+      Script: {instanceID: 62390}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -166,6 +278,12 @@ ScriptsOnlyBuild:
     - Class: 1839735485
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: ae83e830e7a90c0aff918c4c2e520825
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: GraphicRaycaster
   - hash:
       serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
@@ -232,6 +350,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: GroupTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 1292eee39418dadde139324765b6bfe9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIHealthBar
   - hash:
       serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
@@ -418,6 +542,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: 3520d9b963d9c53fa50efe61cf8f7ffe
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NonPlayerCharacter
   - hash:
       serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
@@ -786,12 +916,6 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
-      Hash: ae83e830e7a90c0aff918c4c2e520825
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: GraphicRaycaster
-  - hash:
-      serializedVersion: 2
       Hash: 88cc9df3c6fc697bfbeacd24c0d6f2d7
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
@@ -876,7 +1000,7 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
-      Hash: e91d24da7d6cf75be8ff1eda390127d7
+      Hash: c8ded3e3964d9c3fdd1353bf28be53a5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RubyController
@@ -972,17 +1096,12 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 1292eee39418dadde139324765b6bfe9
+      Hash: 5542f3ae196faef513bb1cda3e74fb10
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: UIHealthBar
-  - hash:
-      serializedVersion: 2
-      Hash: 3520d9b963d9c53fa50efe61cf8f7ffe
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: NonPlayerCharacter
+    className: HardEnemyController
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainGame.unity
-  playerPath: C:/Users/higeu/Desktop/tutorial-3-rubys-adventure-DerekJustus/Tutorial-3-DerekJustus/Builds/Tutorial-3-DerekJustus.exe
+  - Assets/Scenes/SceneTwo.unity
+  playerPath: C:/Users/higeu/Desktop/DerekJustus-Tutorial-3/Builds/Tutorial-3-DerekJustus.exe
