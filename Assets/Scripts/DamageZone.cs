@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageZone : MonoBehaviour
+
 {
+    private RubyController rubyController;
+    
     void OnTriggerStay2D(Collider2D other)
     {
-        RubyController controller = other.GetComponent<RubyController >();
+        RubyController player = other.GetComponent<RubyController>();
 
-        if (controller != null)
+        if (player.shield == true)
         {
-            controller.ChangeHealth(-1);
+            player.ChangeHealth(0);
+        }
+        
+        else if (player != null)
+        {
+            player.ChangeHealth(-1);
         }
     }
 }

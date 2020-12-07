@@ -98,7 +98,12 @@ public class EnemyController : MonoBehaviour
     {
         RubyController player = other.gameObject.GetComponent<RubyController>();
 
-        if (player != null)
+        if(rubyController.shield == true)
+        {
+            player.ChangeHealth(0);
+        }
+        
+        else if (player != null)
         {
             player.ChangeHealth(-1);
         }

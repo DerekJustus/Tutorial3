@@ -9,12 +9,14 @@ public class RubyController : MonoBehaviour
     public float speed = 3.0f;
     public bool gameOver;
     public bool gameWin;
+    public bool shield = false;
     
     public int maxHealth = 5;
 
     public int score;
     public int scoreAmount;
     public int cogs = 4;
+    public int powerUps = 0;
 
     public GameObject projectilePrefab;
     public GameObject pickupEffect;
@@ -23,6 +25,8 @@ public class RubyController : MonoBehaviour
 
     public AudioClip throwSound;
     public AudioClip hitSound;
+    public AudioClip powerPop;
+    public AudioClip barricadeBash;
 
     public Text scoreText;
     public Text winText;
@@ -112,7 +116,7 @@ public class RubyController : MonoBehaviour
                     character.DisplayDialog();
                 }
 
-                if (scoreAmount >= 4)
+                if (scoreAmount >= 4 & powerUps == 0)
                 {
                     SceneManager.LoadScene("SceneTwo");
                     staticLevel = 2;
@@ -198,7 +202,7 @@ public class RubyController : MonoBehaviour
 
         if (staticLevel == 2)
         {
-           if (scoreAmount == 4)
+           if (scoreAmount == 5)
            {
             gameWin = true;
             winText.text = "You Win! Game created by Derek Justus! Press R to play again!";
@@ -227,5 +231,34 @@ public class RubyController : MonoBehaviour
             cogs = cogs + 3;
             Destroy(other.gameObject);
         }
+
+        if(other.tag == "Yellow")
+        {
+            powerUps = powerUps + 1;
+            Destroy(other.gameObject);
+            speed = 6.0f;
+            if(powerUps == 2)
+            {
+                PlaySound(powerPop);
+            }
+        }
+
+        if(other.tag == "Blue")
+        {
+            powerUps = powerUps + 1;
+            Destroy(other.gameObject);
+            shield = true;
+            if(powerUps == 2)
+            {
+                PlaySound(powerPop);
+            }
+        }
+
+        if(other.tag == "Barricade" & powerUps == 2)
+        {
+            Destroy(other.gameObject);
+            PlaySound(barricadeBash);
+        }
+
     }
 }

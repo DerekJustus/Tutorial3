@@ -6,6 +6,11 @@ TagManager:
   tags:
   - RubyController
   - Ammo
+  - MusicPlayer
+  - Power
+  - Yellow
+  - Blue
+  - Barricade
   layers:
   - Default
   - TransparentFX

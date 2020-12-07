@@ -1,10 +1,12 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BluePickup
     - DamageZone
     - EnemyController
     - HardEnemyController
     - HealthCollectible
+    - MusicPlayer
     - NonPlayerCharacter
     - Projectile
     - RubyController
@@ -39,7 +41,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
-    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -95,53 +96,55 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11734}
     - Class: 114
-      Script: {instanceID: 11760}
+      Script: {instanceID: 11736}
     - Class: 114
-      Script: {instanceID: 11910}
+      Script: {instanceID: 11780}
     - Class: 114
-      Script: {instanceID: 12034}
+      Script: {instanceID: 11912}
     - Class: 114
-      Script: {instanceID: 12096}
+      Script: {instanceID: 12036}
     - Class: 114
-      Script: {instanceID: 12160}
+      Script: {instanceID: 12098}
     - Class: 114
-      Script: {instanceID: 12716}
+      Script: {instanceID: 12162}
     - Class: 114
-      Script: {instanceID: 12750}
+      Script: {instanceID: 12718}
     - Class: 114
-      Script: {instanceID: 12912}
+      Script: {instanceID: 12752}
     - Class: 114
-      Script: {instanceID: 12976}
+      Script: {instanceID: 12914}
     - Class: 114
-      Script: {instanceID: 13002}
+      Script: {instanceID: 12978}
     - Class: 114
-      Script: {instanceID: 13572}
+      Script: {instanceID: 13004}
     - Class: 114
-      Script: {instanceID: 13750}
+      Script: {instanceID: 13574}
     - Class: 114
-      Script: {instanceID: 14022}
+      Script: {instanceID: 13752}
     - Class: 114
-      Script: {instanceID: 14180}
+      Script: {instanceID: 14024}
     - Class: 114
-      Script: {instanceID: 14202}
+      Script: {instanceID: 14182}
     - Class: 114
       Script: {instanceID: 14204}
     - Class: 114
-      Script: {instanceID: 14236}
+      Script: {instanceID: 14206}
     - Class: 114
-      Script: {instanceID: 14280}
+      Script: {instanceID: 14238}
     - Class: 114
-      Script: {instanceID: 14570}
+      Script: {instanceID: 14282}
     - Class: 114
-      Script: {instanceID: 14992}
+      Script: {instanceID: 14572}
     - Class: 114
-      Script: {instanceID: 15240}
+      Script: {instanceID: 14994}
     - Class: 114
-      Script: {instanceID: 15294}
+      Script: {instanceID: 15242}
     - Class: 114
-      Script: {instanceID: 15352}
+      Script: {instanceID: 15296}
     - Class: 114
-      Script: {instanceID: 62390}
+      Script: {instanceID: 15354}
+    - Class: 114
+      Script: {instanceID: 28098}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -212,41 +215,51 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11734}
     - Class: 114
-      Script: {instanceID: 11760}
+      Script: {instanceID: 11736}
     - Class: 114
-      Script: {instanceID: 11910}
+      Script: {instanceID: 11780}
     - Class: 114
-      Script: {instanceID: 12034}
+      Script: {instanceID: 11912}
     - Class: 114
-      Script: {instanceID: 12096}
+      Script: {instanceID: 12036}
     - Class: 114
-      Script: {instanceID: 12160}
+      Script: {instanceID: 12098}
     - Class: 114
-      Script: {instanceID: 12716}
+      Script: {instanceID: 12162}
     - Class: 114
-      Script: {instanceID: 12912}
+      Script: {instanceID: 12718}
     - Class: 114
-      Script: {instanceID: 13002}
+      Script: {instanceID: 12752}
     - Class: 114
-      Script: {instanceID: 13572}
+      Script: {instanceID: 12914}
     - Class: 114
-      Script: {instanceID: 13750}
+      Script: {instanceID: 13004}
     - Class: 114
-      Script: {instanceID: 14022}
+      Script: {instanceID: 13574}
     - Class: 114
-      Script: {instanceID: 14204}
+      Script: {instanceID: 13752}
     - Class: 114
-      Script: {instanceID: 14236}
+      Script: {instanceID: 14024}
     - Class: 114
-      Script: {instanceID: 14280}
+      Script: {instanceID: 14182}
     - Class: 114
-      Script: {instanceID: 15240}
+      Script: {instanceID: 14206}
     - Class: 114
-      Script: {instanceID: 15294}
+      Script: {instanceID: 14238}
     - Class: 114
-      Script: {instanceID: 15352}
+      Script: {instanceID: 14282}
     - Class: 114
-      Script: {instanceID: 62390}
+      Script: {instanceID: 14572}
+    - Class: 114
+      Script: {instanceID: 15242}
+    - Class: 114
+      Script: {instanceID: 15296}
+    - Class: 114
+      Script: {instanceID: 15354}
+    - Class: 114
+      Script: {instanceID: 28098}
+    - Class: 114
+      Script: {instanceID: 96350}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -290,6 +303,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 5542f3ae196faef513bb1cda3e74fb10
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HardEnemyController
   - hash:
       serializedVersion: 2
       Hash: 23d669c8bf2983ca4a3df160658318a6
@@ -1000,7 +1019,7 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
-      Hash: c8ded3e3964d9c3fdd1353bf28be53a5
+      Hash: 844e3dabcf65b32e2418907af5351469
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RubyController
@@ -1096,10 +1115,22 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 5542f3ae196faef513bb1cda3e74fb10
+      Hash: 7c46cbcbdd07e7a5cfe42ad427124ca9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: HardEnemyController
+    className: MusicPlayer
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BluePickup
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Barricade
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainGame.unity
